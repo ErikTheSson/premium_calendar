@@ -1,6 +1,6 @@
 import enum
 
-from storageManager import StorageManager
+from IdeaManager import StorageManager
 # TODO NEXT: PROJECT MANAGER
 
 def main():
