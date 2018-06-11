@@ -1,26 +1,30 @@
 import datetime
 
 
-class StorageManager:
+class IdeaManager:
+    # TODO change to IdeManager, so each manager stores individually
 
-    def __init__(self, projects=None, items=None):
+    def __init__(self, projects=None, idea=None):
         self.projects = projects if projects is not None else []
-        self.items = items if items is not None else []
+        self.ideas = idea if idea is not None else []
 
-    def new_item(self, title, tier=0):
-        self.items.append(Item(title, tier))
+    def new_idea(self, title, tier=0):
+        self.ideas.append(Idea(title, tier))
 
-    def delete_item(self, item):  # TODO implement a proper delete function
-        del item                  # TODO find a way to delete specific items
+    def store_ideas(self):  # TODO implement store_ideas
+        pass
+
+    def store_idea(self):   # TODO implement store_idea
+        pass
 
     def __repr__(self):
         rep = ""
-        for idx, item in enumerate(self.items):
-            rep += ("[{}] {}".format(idx + 1, item))
+        for idx, idea in enumerate(self.ideas):
+            rep += ("[{}] {}".format(idx + 1, idea))
         return rep
 
 
-class Item:
+class Idea:
     def __init__(self, title, tier=0):
         self.title = title
         self.tier = tier if tier is not 0 else 0
